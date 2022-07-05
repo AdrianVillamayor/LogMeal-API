@@ -5,8 +5,12 @@ declare(strict_types=1);
 namespace Adrii;
 
 use Adrii\OAuth\Config;
-use Adrii\v2\Users;
+use Adrii\v2\Dataset;
+use Adrii\v2\Image;
 use Adrii\v2\Info;
+use Adrii\v2\Nutrition;
+use Adrii\v2\Users;
+use Adrii\v2\Version;
 
 class LogMeal
 {
@@ -19,17 +23,41 @@ class LogMeal
     ) {
         $this->config = new Config($access_token);
 
-        $this->info   = new Info($this->config);
-        $this->users  = new Users($this->config);
+        $this->dataset      = new Dataset($this->config);
+        $this->image        = new Image($this->config);
+        $this->info         = new Info($this->config);
+        $this->nutrition    = new Nutrition($this->config);
+        $this->users        = new Users($this->config);
+        $this->version      = new Version($this->config);
+    }
+
+    public function dataset()
+    {
+        return $this->dataset;
+    }
+
+    public function image()
+    {
+        return $this->image;
+    }
+
+    public function info()
+    {
+        return $this->info;
+    }
+
+    public function nutrition()
+    {
+        return $this->nutrition;
     }
 
     public function users()
     {
         return $this->users;
     }
-   
-    public function info()
+
+    public function version()
     {
-        return $this->info;
+        return $this->version;
     }
 }

@@ -7,10 +7,10 @@ namespace Adrii\v2;
 use Adrii\OAuth\Config;
 use Adrii\Http\Request;
 
-class Info
+class Version
 {
     private $config;
-    private $uri = "/v2/info";
+    private $uri = "/v2/version";
 
     public function __construct(Config $config)
     {
@@ -19,9 +19,9 @@ class Info
     }
 
     //  Get information about your current account limitations
-    public function limitations()
+    public function activeModels()
     {
-        $url     = $this->config->getApiUri("{$this->uri}/limitations");
+        $url     = $this->config->getApiUri("{$this->uri}/activeModels");
         $bearer  = $this->config->getAccessToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
@@ -32,9 +32,9 @@ class Info
 
 
     //  Get list of accessible services (endpoints)
-    public function services()
+    public function activeAPIs()
     {
-        $url     = $this->config->getApiUri("{$this->uri}/services");
+        $url     = $this->config->getApiUri("{$this->uri}/activeAPIs");
         $bearer  = $this->config->getAccessToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
@@ -44,22 +44,9 @@ class Info
     }
 
     // Get information about the available nutritional indicators
-    public function availableNutrients()
+    public function allModels()
     {
-        $url     = $this->config->getApiUri("{$this->uri}/availableNutrients");
-        $bearer  = $this->config->getAccessToken();
-        $headers = ["Authorization" => "Bearer {$bearer}"];
-
-        $response = $this->http_request->get($url, [], $headers);
-
-        return $response;
-    }
-
-
-    // Returns the available languages to be assigned to APIUsers.
-    public function languages()
-    {
-        $url     = $this->config->getApiUri("{$this->uri}/languages");
+        $url     = $this->config->getApiUri("{$this->uri}/allModels");
         $bearer  = $this->config->getAccessToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 

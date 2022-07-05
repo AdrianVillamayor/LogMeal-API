@@ -12,7 +12,6 @@ class Config
     private $user_token = null;
     private $user_id = null;
 
-
     public function __construct($access_token)
     {
         $this->access_token = $access_token;
@@ -45,6 +44,6 @@ class Config
 
     public function getApiUri(string $uri): ?string
     {
-        return self::API_URL . "/" . $uri;
+        return self::API_URL . $uri;
     }
 }

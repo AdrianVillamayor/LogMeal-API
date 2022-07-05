@@ -35,11 +35,11 @@ class Request
 
         $curl->setUrl($url);
 
-        $curl->setPostRaw($post_params);
+        $curl->setPostParams($post_params);
 
         $curl->setHeaders($headers);
 
-        $curl->setMime("form");
+        $curl->setMime("json");
 
         $curl->execute();
 

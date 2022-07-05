@@ -10,7 +10,7 @@ use Adrii\Http\Request;
 class Users
 {
     private $config;
-    private $uri = "/v2/users/";
+    private $uri = "/v2/users";
 
     public function __construct(Config $config)
     {
@@ -67,7 +67,19 @@ class Users
 
         return $response;
     }
+    
+    // Get information about the available nutritional indicators
+    public function modifyUserProfileInfo(array $body)
+    {
+        $user_id = $this->config->getUserId();
+        $url     = $this->config->getApiUri("{$this->uri}/modifyUserProfileInfo/{$user_id}");
+        $bearer  = $this->config->getAccessToken();
+        $headers = ["Authorization" => "Bearer {$bearer}"];
 
+        $response = $this->http_request->post($url, $body, $headers);
+
+        return $response;
+    }
 
     // Returns the available languages to be assigned to APIUsers.
     public function getUserProfileInfo()

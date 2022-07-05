@@ -7,10 +7,10 @@ namespace Adrii\v2;
 use Adrii\OAuth\Config;
 use Adrii\Http\Request;
 
-class Info
+class Dataset
 {
     private $config;
-    private $uri = "/v2/info";
+    private $uri = "/v2/dataset";
 
     public function __construct(Config $config)
     {
@@ -19,9 +19,9 @@ class Info
     }
 
     //  Get information about your current account limitations
-    public function limitations()
+    public function dishes()
     {
-        $url     = $this->config->getApiUri("{$this->uri}/limitations");
+        $url     = $this->config->getApiUri("{$this->uri}/dishes");
         $bearer  = $this->config->getAccessToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
@@ -29,12 +29,10 @@ class Info
 
         return $response;
     }
-
-
-    //  Get list of accessible services (endpoints)
-    public function services()
+   
+    public function foodGroups()
     {
-        $url     = $this->config->getApiUri("{$this->uri}/services");
+        $url     = $this->config->getApiUri("{$this->uri}/foodGroups");
         $bearer  = $this->config->getAccessToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
@@ -42,11 +40,10 @@ class Info
 
         return $response;
     }
-
-    // Get information about the available nutritional indicators
-    public function availableNutrients()
+    
+    public function ingredients()
     {
-        $url     = $this->config->getApiUri("{$this->uri}/availableNutrients");
+        $url     = $this->config->getApiUri("{$this->uri}/ingredients");
         $bearer  = $this->config->getAccessToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
@@ -54,12 +51,10 @@ class Info
 
         return $response;
     }
-
-
-    // Returns the available languages to be assigned to APIUsers.
-    public function languages()
+    
+    public function foodGroupsFromDish()
     {
-        $url     = $this->config->getApiUri("{$this->uri}/languages");
+        $url     = $this->config->getApiUri("{$this->uri}/foodGroupsFromDish");
         $bearer  = $this->config->getAccessToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
