@@ -27,7 +27,7 @@ class Users
      * @throws Exception If element in array is not an integer
      */
 
-    public function signUp($username, $lang)
+    public function signUp(string $username, string $lang)
     {
         $url     = $this->config->getApiUri("{$this->uri}/signUp");
         $bearer  = $this->config->getAccessToken();

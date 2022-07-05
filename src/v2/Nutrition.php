@@ -19,16 +19,17 @@ class Nutrition
     }
 
     //  Get information about your current account limitations
-    public function recipeIngredients($img_id, $class_id = "")
+    public function recipeIngredients(int $img_id, ?int $class_id = null)
     {
         $url     = $this->config->getApiUri("{$this->uri}/recipe/ingredients");
         $bearer  = $this->config->getUserId();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
         $post_params = array(
-            "imageId"   => $img_id,
-            "class_id"  => $class_id
+            "imageId"   => $img_id
         );
+
+        if (isset($class_id) && is_numeric($class_id)) $post_params['class_id'] = $class_id;
 
         $response = $this->http_request->post($url, $post_params, $headers);
 
@@ -36,16 +37,17 @@ class Nutrition
     }
 
     //  Get information about your current account limitations
-    public function recipeNutritionalInfo($img_id, $class_id = "")
+    public function recipeNutritionalInfo(int $img_id, ?int $class_id = null)
     {
         $url     = $this->config->getApiUri("{$this->uri}/recipe/nutritionalInfo");
         $bearer  = $this->config->getUserId();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
         $post_params = array(
-            "imageId"   => $img_id,
-            "class_id"  => $class_id
+            "imageId"   => $img_id
         );
+
+        if (isset($class_id) && is_numeric($class_id)) $post_params['class_id'] = $class_id;
 
         $response = $this->http_request->post($url, $post_params, $headers);
 
@@ -53,16 +55,17 @@ class Nutrition
     }
 
     //  Get information about your current account limitations
-    public function confirmIngredients($img_id, $class_id = "")
+    public function confirmIngredients(int $img_id, ?int $class_id = null)
     {
         $url     = $this->config->getApiUri("{$this->uri}/confirm/ingredients");
         $bearer  = $this->config->getUserId();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
         $post_params = array(
-            "imageId"   => $img_id,
-            "class_id"  => $class_id
+            "imageId"   => $img_id
         );
+
+        if (isset($class_id) && is_numeric($class_id)) $post_params['class_id'] = $class_id;
 
         $response = $this->http_request->post($url, $post_params, $headers);
 
@@ -70,7 +73,7 @@ class Nutrition
     }
 
     //  Get information about your current account limitations
-    public function confirmQuantity($img_id, $ingredients_per_item, $salt = null, $sugar = null)
+    public function confirmQuantity(int $img_id, array $ingredients_per_item, ?array $salt = null, ?array $sugar = null)
     {
         $url     = $this->config->getApiUri("{$this->uri}/confirm/quantity");
         $bearer  = $this->config->getUserId();
