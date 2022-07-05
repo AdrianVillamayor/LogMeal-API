@@ -27,7 +27,7 @@ class Config
         return $this->user_token;
     }
    
-    public function setUserId(string $user_id): void
+    public function setUserId(int $user_id): void
     {
         $this->user_id = $user_id;
     }
