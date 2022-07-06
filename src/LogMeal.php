@@ -25,9 +25,8 @@ class LogMeal
     private $users;
     private $version;
 
-    public function __construct(
-        string $access_token
-    ) {
+    public function __construct(string $access_token)
+    {
         $this->config = new Config($access_token);
 
         $this->dataset      = new Dataset($this->config);
