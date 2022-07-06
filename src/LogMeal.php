@@ -9,6 +9,7 @@ use Adrii\v2\Dataset;
 use Adrii\v2\Image;
 use Adrii\v2\Info;
 use Adrii\v2\Nutrition;
+use Adrii\v2\Profile;
 use Adrii\v2\Users;
 use Adrii\v2\Version;
 
