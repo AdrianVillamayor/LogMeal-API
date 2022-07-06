@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Adrii;
+namespace Adrii\LogMeal;
 
-use Adrii\OAuth\Config;
-use Adrii\v2\Dataset;
-use Adrii\v2\Image;
-use Adrii\v2\Info;
-use Adrii\v2\Nutrition;
-use Adrii\v2\Profile;
-use Adrii\v2\Users;
-use Adrii\v2\Version;
+use Adrii\LogMeal\OAuth\Config;
+use Adrii\LogMeal\v2\Dataset;
+use Adrii\LogMeal\v2\Image;
+use Adrii\LogMeal\v2\Info;
+use Adrii\LogMeal\v2\Nutrition;
+use Adrii\LogMeal\v2\Profile;
+use Adrii\LogMeal\v2\Users;
+use Adrii\LogMeal\v2\Version;
 
 class LogMeal
 {

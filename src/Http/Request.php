@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Adrii\Http;
+namespace Adrii\LogMeal\Http;
 
-use Adrii\CurlHelper;
+use Adrii\LogMeal\CurlHelper;
 
 class Request
 {

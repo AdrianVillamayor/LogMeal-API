@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Adrii\v2;
+namespace Adrii\LogMeal\v2;
 
-use Adrii\OAuth\Config;
-use Adrii\Http\Request;
+use Adrii\LogMeal\OAuth\Config;
+use Adrii\LogMeal\Http\Request;
 
 class Dataset
 {
