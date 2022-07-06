@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Adrii\LogMeal\Http;
 
-use Adrii\LogMeal\CurlHelper;
+use Adrii\CurlHelper;
 
 class Request
 {
