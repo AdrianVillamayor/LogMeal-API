@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Adrii\\LogMeal": "src/LogMeal.php"
+            "Adrii\\LogMeal\\": "src/LogMeal.php"
         }
     },
     "require": {
