@@ -71,7 +71,7 @@ class Image
     //  Get information about your current account limitations
     public function confirmType(int $img_id, int $type)
     {
-        $url     = $this->config->getApiUri("{$this->uri}/complete/quantity");
+        $url     = $this->config->getApiUri("{$this->uri}/confirm/quantity");
         $bearer  = $this->config->getUserId();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
@@ -88,7 +88,7 @@ class Image
     //  Get information about your current account limitations
     public function confirmFoodGroup(int $img_id, array $confirmedFoodGroups)
     {
-        $url     = $this->config->getApiUri("{$this->uri}/complete/food_group");
+        $url     = $this->config->getApiUri("{$this->uri}/confirm/food_group");
         $bearer  = $this->config->getUserId();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
@@ -105,7 +105,7 @@ class Image
     //  Get information about your current account limitations
     public function confirmDish(int $img_id, array $confirmedClass, array $source, ?array $food_item_position = null)
     {
-        $url     = $this->config->getApiUri("{$this->uri}/complete/dish");
+        $url     = $this->config->getApiUri("{$this->uri}/confirm/dish");
         $bearer  = $this->config->getUserId();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
