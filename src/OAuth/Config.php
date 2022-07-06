@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Adrii\LogMeal\LogMeal\OAuth;
+namespace Adrii\LogMeal\OAuth;
 
 class Config
 {
