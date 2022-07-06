@@ -15,15 +15,15 @@ use Adrii\v2\Version;
 
 class LogMeal
 {
-   private $config;
-   
-   private $dataset;
-   private $image;
-   private $info;
-   private $nutrition;
-   private $profile;
-   private $users;
-   private $version;
+    private $config;
+
+    private $dataset;
+    private $image;
+    private $info;
+    private $nutrition;
+    private $profile;
+    private $users;
+    private $version;
 
     public function __construct(
         string $access_token
@@ -39,7 +39,8 @@ class LogMeal
         $this->version      = new Version($this->config);
     }
 
-    public function setUser(int $id, string $username){
+    public function setUser(int $id, string $username)
+    {
         $this->config->setUserId($id);
         $this->config->setUserToken($username);
     }
@@ -63,7 +64,7 @@ class LogMeal
     {
         return $this->nutrition;
     }
-  
+
     public function profile()
     {
         return $this->profile;
