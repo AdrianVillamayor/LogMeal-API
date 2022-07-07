@@ -10,6 +10,7 @@ use Adrii\LogMeal\v2\Image;
 use Adrii\LogMeal\v2\Info;
 use Adrii\LogMeal\v2\Nutrition;
 use Adrii\LogMeal\v2\Profile;
+use Adrii\LogMeal\v2\Score;
 use Adrii\LogMeal\v2\Users;
 use Adrii\LogMeal\v2\Version;
 
@@ -22,6 +23,7 @@ class LogMeal
     private $info;
     private $nutrition;
     private $profile;
+    private $score;
     private $users;
     private $version;
 
@@ -34,6 +36,7 @@ class LogMeal
         $this->info         = new Info($this->config);
         $this->nutrition    = new Nutrition($this->config);
         $this->profile      = new Profile($this->config);
+        $this->score        = new Score($this->config);
         $this->users        = new Users($this->config);
         $this->version      = new Version($this->config);
     }
@@ -67,6 +70,11 @@ class LogMeal
     public function profile()
     {
         return $this->profile;
+    }
+
+    public function score()
+    {
+        return $this->score;
     }
 
     public function users()
