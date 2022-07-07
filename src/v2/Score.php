@@ -19,11 +19,9 @@ class Score
     }
 
     //  Get information about your current account limitations
-    public function nutriScore()
+    public function nutriScore(int $img_id)
     {
-        $user_id  = $this->config->getUserId();
-
-        $url     = $this->config->getApiUri("{$this->uri}/{$user_id}/nutriScore");
+        $url     = $this->config->getApiUri("{$this->uri}/{$img_id}/nutriScore");
         $bearer  = $this->config->getUserToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
@@ -31,6 +29,7 @@ class Score
 
         return $response;
     }
+
 
     // format "YYYY-MM-DD"
     public function nutriScore4Occasion(string $occasion, string $date)
