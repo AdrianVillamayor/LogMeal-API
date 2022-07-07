@@ -103,7 +103,7 @@ class Image
     }
 
     //  Get information about your current account limitations
-    public function confirmDish(int $img_id, array $confirmedClass, array $source, ?array $food_item_position = null)
+    public function confirmDish(int $img_id, array $confirmedClass, array $source, array $food_item_position)
     {
         $url     = $this->config->getApiUri("{$this->uri}/confirm/dish");
         $bearer  = $this->config->getUserToken();
@@ -112,10 +112,9 @@ class Image
         $post_params = array(
             "imageId"            => $img_id,
             "confirmedClass"     => $confirmedClass,
-            "source"             => $source
+            "source"             => $source,
+            "food_item_position" => $food_item_position
         );
-
-        if (isset($food_item_position) && !empty($food_item_position)) $post_params["food_item_position"] = $food_item_position;
 
         $response = $this->http_request->post($url, $post_params, $headers);
 
