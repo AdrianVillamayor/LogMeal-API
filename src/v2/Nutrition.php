@@ -22,7 +22,7 @@ class Nutrition
     public function recipeIngredients(int $img_id, ?int $class_id = null)
     {
         $url     = $this->config->getApiUri("{$this->uri}/recipe/ingredients");
-        $bearer  = $this->config->getUserId();
+        $bearer  = $this->config->getUserToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
         $post_params = array(
@@ -40,7 +40,7 @@ class Nutrition
     public function recipeNutritionalInfo(int $img_id, ?int $class_id = null)
     {
         $url     = $this->config->getApiUri("{$this->uri}/recipe/nutritionalInfo");
-        $bearer  = $this->config->getUserId();
+        $bearer  = $this->config->getUserToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
         $post_params = array(
@@ -58,7 +58,7 @@ class Nutrition
     public function confirmIngredients(int $img_id, ?int $class_id = null)
     {
         $url     = $this->config->getApiUri("{$this->uri}/confirm/ingredients");
-        $bearer  = $this->config->getUserId();
+        $bearer  = $this->config->getUserToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
         $post_params = array(
@@ -76,7 +76,7 @@ class Nutrition
     public function confirmQuantity(int $img_id, array $ingredients_per_item, ?array $salt = null, ?array $sugar = null)
     {
         $url     = $this->config->getApiUri("{$this->uri}/confirm/quantity");
-        $bearer  = $this->config->getUserId();
+        $bearer  = $this->config->getUserToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
         $post_params = array(

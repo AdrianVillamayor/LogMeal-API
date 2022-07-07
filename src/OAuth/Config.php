@@ -22,17 +22,17 @@ class Config
         $this->user_token = $user_token;
     }
 
-    public function getUserToken(): string
-    {
-        return $this->user_token;
-    }
-   
     public function setUserId(int $user_id): void
     {
         $this->user_id = $user_id;
     }
+    
+    public function getUserToken(): string
+    {
+        return $this->user_token;
+    }
 
-    public function getUserId(): string
+    public function getUserId(): int
     {
         return $this->user_id;
     }

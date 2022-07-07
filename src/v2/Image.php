@@ -22,7 +22,7 @@ class Image
     public function recognition(string $image)
     {
         $url     = $this->config->getApiUri("{$this->uri}/recognition/type");
-        $bearer  = $this->config->getUserId();
+        $bearer  = $this->config->getUserToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
         $post_params = array(
@@ -38,7 +38,7 @@ class Image
     public function segmentationComplete(string $image)
     {
         $url     = $this->config->getApiUri("{$this->uri}/segmentation/complete");
-        $bearer  = $this->config->getUserId();
+        $bearer  = $this->config->getUserToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
         $post_params = array(
@@ -54,7 +54,7 @@ class Image
     public function segmentationQuantity(string $image, string $depth = "")
     {
         $url     = $this->config->getApiUri("{$this->uri}/segmentation/complete/quantity");
-        $bearer  = $this->config->getUserId();
+        $bearer  = $this->config->getUserToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
         $post_params = array(
@@ -72,7 +72,7 @@ class Image
     public function confirmType(int $img_id, int $type)
     {
         $url     = $this->config->getApiUri("{$this->uri}/confirm/quantity");
-        $bearer  = $this->config->getUserId();
+        $bearer  = $this->config->getUserToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
         $post_params = array(
@@ -89,7 +89,7 @@ class Image
     public function confirmFoodGroup(int $img_id, array $confirmedFoodGroups)
     {
         $url     = $this->config->getApiUri("{$this->uri}/confirm/food_group");
-        $bearer  = $this->config->getUserId();
+        $bearer  = $this->config->getUserToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
         $post_params = array(
@@ -106,7 +106,7 @@ class Image
     public function confirmDish(int $img_id, array $confirmedClass, array $source, ?array $food_item_position = null)
     {
         $url     = $this->config->getApiUri("{$this->uri}/confirm/dish");
-        $bearer  = $this->config->getUserId();
+        $bearer  = $this->config->getUserToken();
         $headers = ["Authorization" => "Bearer {$bearer}"];
 
         $post_params = array(
